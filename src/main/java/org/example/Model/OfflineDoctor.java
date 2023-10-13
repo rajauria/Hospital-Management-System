@@ -5,12 +5,12 @@ import org.example.Model.Interfaces.Doctor;
 public class OfflineDoctor implements Doctor {
 
 
-    String doctorID ;
+    public String doctorID ;
 
-    String doctorName;
-    String doctorDegree;
-    int doctorAge ;
-    String doctorSpecialisation;
+    public String doctorName;
+    public String doctorDegree;
+    public int doctorAge ;
+    public String doctorSpecialisation;
 
 
     OfflineDoctor (String doctorName, String doctorDegree, int doctorAge , String doctorSpecialisation, String doctorID ){
@@ -19,6 +19,11 @@ public class OfflineDoctor implements Doctor {
         this.doctorSpecialisation = doctorSpecialisation;
         this.doctorName = doctorName;
         this.doctorID = doctorID;
+    }
+
+    @Override
+    public String docID() {
+        return doctorID;
     }
 
     @Override
@@ -38,4 +43,6 @@ public class OfflineDoctor implements Doctor {
         System.out.println("My age is " + doctorAge);
         System.out.println("with specialisation in " + doctorSpecialisation);
     }
+
+
 }

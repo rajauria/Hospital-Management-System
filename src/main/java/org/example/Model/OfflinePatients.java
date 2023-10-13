@@ -4,13 +4,13 @@ import org.example.Model.Interfaces.Patients;
 
 public class OfflinePatients implements Patients {
 
-    String patientID;
-    String patientName ;
-    String patientIllness ;
-    int patientAge ;
-    String gender ;
+    public String patientID;
+   public String patientName ;
+   public String patientIllness ;
+  public   int patientAge ;
+     public String gender ;
 
-    int bedNumber ;
+    public int bedNumber ;
 
 
     OfflinePatients (String patientName , String patientIllness, int patientAge, String  gender, String patientID){
@@ -21,6 +21,12 @@ public class OfflinePatients implements Patients {
         this.patientID   = patientID;
 
     }
+
+    @Override
+    public String patientID() {
+        return patientID;
+    }
+
     @Override
     public void getMyDetails() {
         System.out.println("Hey i am Patient" + patientName);
