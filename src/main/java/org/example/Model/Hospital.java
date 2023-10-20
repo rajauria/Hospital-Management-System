@@ -3,6 +3,7 @@ package org.example.Model;
 import org.example.Database.DoctorDB;
 import org.example.Database.PatientDB;
 import org.example.Model.Interfaces.Doctor;
+import org.example.Model.Interfaces.Patients;
 
 import java.sql.SQLOutput;
 
@@ -43,23 +44,31 @@ public class Hospital {
     }
 
     public void getTotalPatients (){
-
+        System.out.println(patientDatabase.getTotalPatients());
     }
 
     public void getTotalDoctors (){
-
+        System.out.println(doctorDatabase.getTotalDocs());
     }
 
-    public void getPatientDetails (String patientID  ){
-
+    public void getPatientDetails (String patientID ){
+         Patients p = patientDatabase.getPatientByID (patientID);
+         p.getMyDetails();
     }
 
-    public void getDoctorDetails (String doctorID  ){
-
+    public void getDoctorDetails (String doctorID ){
+        Doctor d = doctorDatabase.getDoctorByID(doctorID);
+        d.getMyDetails();
     }
 
     public void admitPatient (String patientName , String patientIllness, int patientAge, String  gender){
+        String patientID = "Patient" + (patientDatabase.getTotalPatients() + 1);
+        Patients p = new OfflinePatients(patientID,patientName,patientIllness,patientAge,gender,1);
+        patientDatabase.addPatient(p);
+        Doctor d = doctorDatabase.assignPatientToDoctor(p);
 
+        System.out.println("Patient  " + p.getPatientName() + " got admitted with patient id " + p.patientID());
+        System.out.println(p.getPatientName() + " got assigned to Doctor " + d.doctorName() +" whose doctor ID is " + d.docID());
     }
 
     public void addDoctor (String doctorName, String doctorDegree, int doctorAge , String doctorSpecialisation ){

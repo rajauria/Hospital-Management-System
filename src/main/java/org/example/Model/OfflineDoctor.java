@@ -22,6 +22,11 @@ public class OfflineDoctor implements Doctor {
     }
 
     @Override
+    public String doctorName() {
+        return doctorName ;
+    }
+
+    @Override
     public String docID() {
         return doctorID;
     }
@@ -38,7 +43,7 @@ public class OfflineDoctor implements Doctor {
 
     @Override
     public void getMyDetails() {
-        System.out.println("Hey i am Doctor" + doctorName);
+        System.out.println("Hey i am Doctor " + doctorName);
         System.out.println("My doc degree is " + doctorDegree);
         System.out.println("My age is " + doctorAge);
         System.out.println("with specialisation in " + doctorSpecialisation);

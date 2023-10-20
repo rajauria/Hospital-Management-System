@@ -9,6 +9,21 @@ public class Main {
         aiims.addDoctor("Ashish","MBBS",34, "Cardiology");
         aiims.addDoctor("Himanshu","MD",45, "Oncology");
 
+        aiims.getHospitalName();
+        aiims.getHospitalAddress();
+        aiims.getTotalBeds();
+        aiims.getDoctorDetails("HSP1");
+        aiims.getTotalPatients();
+
+        aiims.admitPatient("Heena", "Fever", 27, "Female");
+        aiims.admitPatient("Nakul", "Fever", 26, "Male");
+
+        aiims.getTotalPatients();
+
+        aiims.getPatientDetails("Patient1");
+
+
+
 
     }
 }
