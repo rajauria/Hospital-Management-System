@@ -1,5 +1,7 @@
 package org.example.Model;
 
+import org.example.Database.DoctorDB;
+import org.example.Database.PatientDB;
 import org.example.Model.Interfaces.Patients;
 
 public class OfflinePatients implements Patients {
@@ -13,14 +15,25 @@ public class OfflinePatients implements Patients {
     public int bedNumber ;
 
 
-    OfflinePatients (String patientName , String patientIllness, int patientAge, String  gender, String patientID){
+
+
+    OfflinePatients (String patientID, String patientName , String patientIllness, int patientAge, String  gender, int bedNumber){
         this.patientAge = patientAge;
         this.patientName = patientName;
         this.patientIllness = patientIllness;
         this.gender = gender;
         this.patientID   = patientID;
-
+        this.bedNumber = bedNumber;
     }
+
+
+
+
+
+    public String getPatientID (){
+        return patientID;
+    }
+
 
     @Override
     public String patientID() {
@@ -28,12 +41,19 @@ public class OfflinePatients implements Patients {
     }
 
     @Override
+    public String getPatientName() {
+        return patientName;
+    }
+
+
+
+    @Override
     public void getMyDetails() {
-        System.out.println("Hey i am Patient" + patientName);
+        System.out.println("Hey i am Patient " + patientName);
         System.out.println("having illness " + patientIllness);
         System.out.println("My age is " + patientAge);
-        System.out.println("My patient id is" + patientID );
-        System.out.println("My bed no is" + bedNumber );
+        System.out.println("My patient id is " + patientID );
+        System.out.println("My bed no is " + bedNumber );
 
     }
 
@@ -46,4 +66,6 @@ public class OfflinePatients implements Patients {
     public void assignMeDoctor() {
 
     }
+
+
 }

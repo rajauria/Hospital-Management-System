@@ -12,6 +12,15 @@ public class PatientDB  {
 
     }
 
+    public Patients getPatientByID (String patientID){
+        return patientDetails.get (patientID);
+    }
+
+    public int getTotalPatients (){
+        return patientDetails.size();
+    }
+
+
     public Patients getPatient (String patientID){
         return patientDetails.get (patientID);
 

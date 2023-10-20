@@ -20,6 +20,10 @@ public class DoctorDB {
         return docDetails.size();
     }
 
+    public Doctor getDoctorByID (String doctorID){
+        return docDetails.get (doctorID);
+    }
+
     public ArrayList<Patients> getAssignedPatients (String docID){
         return docVsPatient.get (docID);
     }
