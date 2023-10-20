@@ -58,7 +58,7 @@ public class Hospital {
 
     }
 
-    public void admitPatient (String patientName , String patientIllness, int patientAge, String  gender){
+    public void admitPatient (String patientName , String patien iIllness, int patientAge, String  gender){
 
     }
 
