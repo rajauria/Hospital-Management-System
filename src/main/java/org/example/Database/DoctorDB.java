@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class DoctorDB {
-    HashMap<String, Doctor> docDetails;
+   public HashMap<String, Doctor> docDetails;
 
     HashMap <String, ArrayList<Patients>> docVsPatient ;
     public DoctorDB (){

@@ -5,7 +5,7 @@ import org.example.Model.Interfaces.Patients;
 import java.util.HashMap;
 
 public class PatientDB  {
-    HashMap < String, Patients> patientDetails ;
+    public HashMap < String, Patients> patientDetails ;
 
     public PatientDB (){
         patientDetails = new HashMap<>();
